@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         b_root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (input != null && !input.getHint().toString().equals("0") && !input.getText().toString().contains("-")){
+                if (input != null && !input.getText().toString().contains("-")){
                     mValueOne = Float.parseFloat(input.getText() + "");
                     sum = true;
                     if(Math.sqrt(mValueOne) % 1 == 0){
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         b_sum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (input != null && !input.getHint().toString().equals("0")) {
+                if (input != null) {
                     mValueOne = Float.parseFloat(input.getText() + "");
                     sum = true;
                     input.setText(null);
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         b_sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (input != null && !input.getHint().toString().equals("0")) {
+                if (input != null) {
                     mValueOne = Float.parseFloat(input.getText() + "");
                     sub = true;
                     input.setText(null);
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         b_mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (input != null && !input.getHint().toString().equals("0")) {
+                if (input != null) {
                     mValueOne = Float.parseFloat(input.getText() + "");
                     mul = true;
                     input.setText(null);
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         b_div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (input != null && !input.getHint().toString().equals("0")) {
+                if (input != null) {
                     mValueOne = Float.parseFloat(input.getText() + "");
                     div = true;
                     input.setText(null);
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         b_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (input != null && !input.getHint().toString().equals("0")) {
+                if (input != null) {
                     if (input.getText().toString().contains("-")) {
                         StringBuilder inp = new StringBuilder(input.getText().toString());
                         inp.setCharAt(0, ' ');
@@ -184,19 +184,19 @@ public class MainActivity extends AppCompatActivity {
         b_eq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (input != null && !input.getHint().toString().equals("0")) {
-                    Float result = Float.valueOf(0);
+                if (input != null) {
+                    Float result = (float) 0;
                     mValueTwo = Float.parseFloat(input.getText() + "");
-                    if (sum == true) {
+                    if (sum) {
                         result = mValueOne + mValueTwo;
                         sum = false;
-                    } else if (sub == true) {
+                    } else if (sub) {
                         result = mValueOne - mValueTwo;
                         sub = false;
-                    } else if (mul == true) {
+                    } else if (mul) {
                         result = mValueOne * mValueTwo;
                         mul = false;
-                    } else if (div == true) {
+                    } else if (div) {
                         result = mValueOne / mValueTwo;
                         div = false;
                     }
